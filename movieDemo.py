@@ -42,7 +42,8 @@ def main(offset):
     url = 'http://maoyan.com/board/4?offset=' + str(offset)
     html = get_one_page(url)
     for item in parse_one_page(html):
-        print(item)
+        # print(item)
+        print(json.dumps(item, encoding="UTF-8", ensure_ascii=False))
         write_to_file(item)
 if __name__ == '__main__':
     p = Pool()
